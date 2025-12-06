@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Data</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Feedback</th>
+                    <th>Rating</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% surveys.forEach(survey => { %>
+                    <tr>
+                        <td><%= survey.S0045FName %></td>
+                        <td><%= survey.S0045LName %></td>
+                        <td><%= survey.S0045Email %></td>
+                        <td><%= survey.S0045Feedback %></td>
+                        <td><%= survey.S0045Rating %></td>
+                        <td><%= new Date(survey.S0045Timestamp).toLocaleString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/" class="link">Back to Form</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+create a product.html which contains search bar and a button to fetch products from the backend , a section where results are dynamically stored 
+use ajax to call the backend 
+manipulate the dom to 
+  .display product name, price, category, manufacturing Date
+  . add a badge if the product is on sale 
+add a search filter that updates hte dom without reloading 

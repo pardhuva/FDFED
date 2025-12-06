@@ -1,0 +1,12 @@
+//create a login.html
+//now you have to validate whether the user details you entered really exists or not 
+//for validating you first when you click the login then you access all teh values and then you send the values to the backend to check if the user exists 
+//now before sending to to the backend first access the detials using the id 
+//then now use the fethc to sedn the details for the validation use POST method to send to the backend so it willl send the json boject of the input details 
+so it contains three categories 
+1. method: "post"  sends data to the server
+2. headers: tells the server that you are sending json
+3. body: it will convert the details sent to the json string so when you add header then it will understand that it is json string then it will render the usrename and password from it 
+//so now app.post() now take the detials from the req.body adn now you have to compare with the valid details for that 
+first create users array that stores the valid users now we have to compare so
+now foreach or find if you use foreach then it will not stop after you fidn the user it continue to check till the last and 

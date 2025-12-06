@@ -1,0 +1,42 @@
+
+create public, views , server.js, product.html,style.css, script.js files
+//so first for package.json use npm init -y and install the required packages 
+
+//now start with product.html file including the search input element and button and dynamic rendering div container 
+//now script.js as when you clikc the button the product info you entered should be taken ans should be fetched from backend 
+//for that first store the data you entered adn then use fetch which calls the api get endpoint which returns the response 
+
+syntax for fetching : fetch(`/product?name=${encodeURIComponent(productName)}`)
+fetch(......)  is used to send a Get request to your backend 
+/product?naem=.... is the route your backend is listening on.
+productName is the value entered by the user 
+encodeURIComponent(....) is just a safety measure to URL-encode any special characters in the product name (like spaces).
+
+next link to fetch .then(response => response.json())
+this waits for the server for the response 
+response.josn() reads the response and converts it inot a js object 
+this is needed because the server sends teh JSON text and you want to use it as an object 
+
+next link .then(data =>{
+               console.log('Product:',data);
+            })
+so the data is now printed which is in the form of a object 
+
+next .catch(error =>{
+         console.log('Error fetching product:',error);    
+     })
+if anything goes wrong (like the server isnt running) this block catches the error and shows in teh console 
+
+
+//fetch is completed then now go to server and create a server , middle ware , connect mongodb, create schema and its model and insert some data 
+//now based on query try to render the product from the model then send the response 
+
+//now the response we create elements to display on the screen 
+
+
+// okay fetch we did now instead fo fetch use XMLhttp request 
+// all the things remain same it is used to fetch teh data without reloading so replace fetch 
+const xhr = new XMLHttpRequest();
+XMLHttpRequest (aka XHR) is a built-in browser object that lets you:
+. Send HTTP requests (GET, POST, etc.)
+. 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+
+        <p id="successMessage" style="color: green; display: none;">Form submitted successfully!</p>
+
+        <form id="surveyForm" action="/submit" method="POST">
+            <div class="form-group">
+                <label for="S0045FName">First Name:</label>
+                <input type="text" id="S0045FName" name="S0045FName">
+                <span id="S0045FNameError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="S0045LName">Last Name:</label>
+                <input type="text" id="S0045LName" name="S0045LName">
+                <span id="S0045LNameError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="S0045Email">Email:</label>
+                <input type="email" id="S0045Email" name="S0045Email">
+                <span id="S0045EmailError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="S0045Feedback">Feedback:</label>
+                <textarea id="S0045Feedback" name="S0045Feedback"></textarea>
+                <span id="S0045FeedbackError" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="S0045Rating">Rating (1-5):</label>
+                <input type="number" id="S0045Rating" name="S0045Rating" min="1" max="5">
+                <span id="S0045RatingError" class="error"></span>
+            </div>
+
+            <button type="submit" onmouseover="this.style.backgroundColor='purple'">Submit</button>
+        </form>
+        <a href="/display" class="link">View Survey Data</a>
+    </div>
+</body>
+</html>

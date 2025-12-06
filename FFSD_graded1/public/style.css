@@ -1,0 +1,30 @@
+
+#search-input{
+    height:30px;
+    width:140px;
+}
+
+#search-button{
+    height:30px;
+    width:100px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  width: 200px;
+  text-align: center;
+}
+
+.sale-badge {
+  background-color: #ff4747;
+  color: white;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}

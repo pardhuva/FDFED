@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <input type="text" id="name" placeholder="Enter the name">
+    <input type="text" id="account-number" placeholder="Enter the account number">
+    <input type="password" id="password" placeholder="Enter the password">
+    <button id="login-button">Login</button>
+    <div id="login-message"></div>
+    
+    <script>
+        document.getElementById('login-button').onclick = async function() {
+            const name = document.getElementById('name').value;
+            const acc = document.getElementById('account-number').value;
+            const pwd = document.getElementById('password').value;
+            const msgDiv = document.getElementById('login-message');
+            if(name && acc && pwd) {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, account: acc, password: pwd })
+                });
+                const data = await res.json();
+                if(data.success) {
+                    localStorage.setItem('bank_logged_in', 'true');
+                    window.location.href = "/homepage";
+                } else {
+                    msgDiv.textContent = data.message || "Login failed";
+                    msgDiv.style.color = "red";
+                }
+            } else {
+                msgDiv.textContent = "Please fill all fields.";
+                msgDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Display</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="card bg-white p-6 w-full max-w-md">
+        <div class="flex items-center mb-4">
+            <span class="text-gray-500 mr-2">📊</span>
+            <h1 class="text-2xl font-bold">Transaction Details</h1>
+        </div>
+        <div class="mb-4 p-4 bg-green-50 rounded-lg flex items-center">
+            <span class="text-yellow-500 mr-2">💰</span>
+            <p class="balance text-lg" id="currentBalance">Current Balance: ₹<span id="balanceAmount">0</span></p>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg">
+            <h2 class="text-lg font-semibold mb-2">Transaction History</h2>
+            <table id="transactionTable" class="transaction-table"></table>
+        </div>
+        <button id="backBtn" class="mt-4 bg-blue-500 text-white p-2 rounded w-full">Back to Bank</button>
+    </div>
+    <script>
+        // Synchronous function to parse URL parameters
+        // Executes immediately in the call stack
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                balance: parseFloat(params.get('balance')) || 0,
+                transactions: JSON.parse(params.get('transactions')) || []
+            };
+        }
+
+        // Synchronous function to update balance display
+        // Runs in the call stack when called
+        function updateBalance() {
+            const data = getQueryParams();
+            document.getElementById('balanceAmount').textContent = data.balance.toFixed(2); // Synchronous DOM update
+        }
+
+        // Synchronous function to update transaction table
+        // Executes immediately and updates DOM synchronously
+        function updateTransactionTable() {
+            const data = getQueryParams();
+            const table = document.getElementById('transactionTable');
+            table.innerHTML = `
+                <tr>
+                    <th>Type</th>
+                    <th>Amount (₹)</th>
+                    <th>Timestamp</th>
+                </tr>
+            `; // Synchronous DOM update
+            for (let i = 0; i < data.transactions.length; i++) { // Synchronous loop
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${data.transactions[i].type}</td>
+                    <td>${data.transactions[i].amount.toFixed(2)}</td>
+                    <td>${data.transactions[i].timestamp}</td>
+                `;
+                table.appendChild(row); // Synchronous DOM append
+            }
+        }
+
+        // Synchronous initialization
+        // Runs in the call stack on page load
+        function init() {
+            updateBalance(); // Synchronous balance update
+            updateTransactionTable(); // Synchronous table update
+        }
+
+        // Event listener for back button
+        // Triggers synchronous navigation
+        document.getElementById('backBtn').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Synchronous navigation
+        });
+
+        // Call init synchronously on page load
+        init(); // Synchronous function call
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Mesh Topology Analysis (8x8)
+
+In the mesh topology, the network latency increases steadily at first, then sharply as the injection rate rises.
+ At low injection rates (0.001 to 0.005), the latency ranges between approximately 46 to 61 units, indicating that the network is functioning efficiently with minimal contention. 
+ However, as the injection rate increases beyond 0.006, the latency begins to rise dramatically, reaching values over 200 at 0.012. This steep increase in latency shows that the mesh network quickly reaches saturation, resulting in significant congestion and packet queuing. 
+ The limited path diversity and absence of wrap-around links make mesh topology less capable of handling high traffic efficiently. This makes mesh suitable primarily for systems with low to moderate communication loads, but not ideal for applications requiring high throughput and scalability.
+
+ Torus Topology Analysis (8x8)
+
+In contrast, the torus topology demonstrates remarkable stability and efficiency even under high injection rates. 
+The average network latency starts at around 32.45 for an injection rate of 0.11 and increases very gradually, reaching only about 35.37 at 0.19.
+ This consistent and slow rise in latency indicates that the torus network handles increasing traffic without significant degradation in performance.
+  The presence of wrap-around links allows packets to take shorter and more diverse paths, reducing congestion and improving data flow across the network. No saturation point is observed within the tested range, making torus topology highly scalable and robust under heavy communication loads.
+   This makes it a preferred choice for high-performance computing systems where network stability and speed are crucial.
+
+   Comparison and Conclusion
+
+When comparing the two topologies, it is evident that the torus topology outperforms the mesh topology in terms of network latency and scalability.
+ While the mesh topology experiences rapid congestion and performance degradation beyond a low injection rate, the torus topology maintains a stable and efficient flow of data across the network.
+  The additional wrap-around connections in torus help in distributing traffic evenly, which significantly delays the onset of saturation. 
+  Therefore, for systems requiring higher throughput, lower latency, and greater scalability, the torus topology is the better option, whereas mesh can still be used for simpler and cost-efficient designs with lighter communication demands.

@@ -1,0 +1,64 @@
+
+
+| **Technology** | **Simple Definition**                                          | **Purpose in Gardenly**                                                                |
+| -------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **HTML**       | Builds the basic structure of a webpage.                       | Creates the layout and content of pages like home, products, etc.                      |
+| **CSS**        | Styles and designs the webpage.                                | Makes the pages look attractive with colors, fonts, and layouts.                       |
+| **JavaScript** | Adds interactivity and logic to webpages.                      | Handles actions like add-to-cart, popups, and form validation.                         |
+| **EJS**        | Lets you mix HTML with JavaScript to create dynamic pages.     | Dynamically displays products, user data, and other content from the server.           |
+| **Express**    | A framework for building the server side of web apps.          | Handles routes like `/home`, `/cart`, `/products`, and connects frontend with backend. |
+| **Node.js**    | Allows JavaScript to run on the server instead of the browser. | Runs your backend code and connects to the database.                                   |
+| **MongoDB**    | A database that stores data in flexible, document-like format. | Stores products, users, orders, and cart information.                                  |
+
+
+1. DHTML:
+    DHTML is the combination of HTML, CSS, JavaScript, and DOM used together to make web pages dynamic 
+      and   interactive — meaning the content or style of the page can change without reloading it.
+    application : when user clicks add to cart the product is added without reloading 
+
+
+2. DOM (Document Object Model): it is a tree-like structure of a webpage that lets JavaScript access and change HTML elements dynamically.
+   application : when hovered the color of button changes 
+
+3. synchronous : executes the code in blocking manner , waits for each taks 
+   application : form validation
+
+4. asynchronous : executes code in non-blocking manner , runs other tasks independently 
+   applciation : fetching products, updating cart 
+    
+    here you can directly use async or 
+    settimeout , setinterval for async show messages after delay, repeated functions 
+    
+    fetch() it is the async api for server communication like rendering the product 
+
+5. ajax : framework for asynchronously updating web pages without reload from a web server either by fetch 
+    application:  adding items to cart dynamically 
+
+6. callstack : js Keeps track of which functions are currently running
+    application: Running addToCart() → calls updateCartCount()
+
+7. callback : it is a fucntion passed as an argument to another function which gets executed later usually after some task completes 
+    application: updating cart after fetching data from server 
+
+8. Eventloop: The event loop is JavaScript’s way of handling asynchronous tasks. It keeps checking the message queue and moves tasks to the call stack when the stack is empty.
+    It allows JavaScript to run non-blocking code, even though it’s single-threaded.
+
+    application: Letting users interact with the page while fetching products
+
+9. Browser APIs: Browser APIs are built-in tools provided by the browser that allow JavaScript to perform tasks outside the main JS engine, like handling timers, network requests, or DOM events.
+   
+   dom api: Access and manipulate HTML elements
+   applications: Updating cart count dynamically
+   fetch api: Make HTTP requests asynchronously
+   application: getting product list from server 
+
+   Fetching products → Fetch API
+   Showing a message after adding to cart → setTimeout
+   Auto-sliding banners → setInterval
+   Listening to button clicks → Event Listeners
+
+
+10. traditional vs SPA 
+   traditional : A traditional web application reloads the entire page whenever the user navigates to a new page.
+       each page has its own html file 
+   SPA : A single-page application loads a single HTML page and dynamically updates the content using JavaScript without reloading the page.
